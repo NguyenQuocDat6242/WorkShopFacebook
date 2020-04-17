@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bài tập Icon của Facebook</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.thanhxanh {
+			height: 75px;
+			background-color: #1e90ffe8;
+			padding-left: 122rem;
+		}
+		.content {
+			float: left;
+			position: relative;
+		}
+		.icon {
+			font-size: 20px;
+			padding: 24px 28px;
+			cursor: pointer;
+		}
+		.noidung {
+			position: absolute;
+			width: 180px;
+			text-align: center;
+			left: -97px;
+			visibility: hidden;
+			opacity: 0;
+		}
+		.noidung:after {
+			content: "";
+			position: absolute;
+			top: -21px;
+			width: 0;
+			border: 11px #ffd70000 solid;
+			border-bottom-color: white;
+			height: 0;
+			right: 31px;
+		}
+		.change{
+			color: #fff;
+		}
+		.hienra{
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+</head>
+<body>
+	<div class="thanhxanh">
+		<div class="content">
+			<div class="icon" data-new="ha"><i class="fas fa-home"></i></div>
+			<div class="noidung" id="ha">
+				<ul class="list-group">
+					<li class="list-group-item">Đăng nhập</li>
+					<li class="list-group-item">Login</li>
+					<li class="list-group-item">Home</li>
+					<li class="list-group-item">Chuyển đổi</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="icon" data-new="huong"><i class="fas fa-search"></i></div>
+			<div class="noidung" id="huong">
+				<ul class="list-group">
+					<li class="list-group-item">Đăng nhập</li>
+					<li class="list-group-item">Login</li>
+					<li class="list-group-item">Home</li>
+					<li class="list-group-item">Chuyển đổi</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="icon" data-new="dat"><i class="fas fa-caret-down"></i></div>
+			<div class="noidung" id="dat">
+				<ul class="list-group">
+					<li class="list-group-item">Đăng nhập</li>
+					<li class="list-group-item">Login</li>
+					<li class="list-group-item">Home</li>
+					<li class="list-group-item">Chuyển đổi</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="icon" data-new="hieu"><i class="fas fa-users"></i></div>
+			<div class="noidung" id="hieu">
+				<ul class="list-group">
+					<li class="list-group-item">Đăng nhập</li>
+					<li class="list-group-item">Login</li>
+					<li class="list-group-item">Home</li>
+					<li class="list-group-item">Chuyển đổi</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var icon = document.getElementsByClassName('icon');
+		for (var i = 0; i < icon.length; i++) {
+			icon[i].onclick = function(){
+				for (var i = 0; i < icon.length; i++) {
+					icon[i].classList.remove('change')
+				}
+				this.classList.toggle('change');
+				var noidung =this.getAttribute('data-new');
+				var noidunghienthi = document.getElementById(noidung);
+				var nd = document.getElementsByClassName('noidung');
+				for (var i = 0; i < nd.length; i++) {
+					nd[i].classList.remove('hienra');
+				}
+				noidunghienthi.classList.toggle('hienra');
+			}
+		}
+	</script>
+</body>
+</html>
