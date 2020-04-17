@@ -102,17 +102,26 @@
 		var icon = document.getElementsByClassName('icon');
 		for (var i = 0; i < icon.length; i++) {
 			icon[i].onclick = function(){
-				for (var i = 0; i < icon.length; i++) {
-					icon[i].classList.remove('change')
+				if (this.classList[1]=='change') {
+					this.classList.toggle('change');
+					var nd = document.getElementsByClassName('noidung');
+					for (var i = 0; i < nd.length; i++) {
+						nd[i].classList.remove('hienra');
+					}
+					noidunghienthi.classList.toggle('hienra');
+				} else {
+					for (var i = 0; i < icon.length; i++) {
+						icon[i].classList.remove('change')
+					}
+					this.classList.toggle('change');
+					var noidung =this.getAttribute('data-new');
+					var noidunghienthi = document.getElementById(noidung);
+					var nd = document.getElementsByClassName('noidung');
+					for (var i = 0; i < nd.length; i++) {
+						nd[i].classList.remove('hienra');
+					}
+					noidunghienthi.classList.toggle('hienra');
 				}
-				this.classList.toggle('change');
-				var noidung =this.getAttribute('data-new');
-				var noidunghienthi = document.getElementById(noidung);
-				var nd = document.getElementsByClassName('noidung');
-				for (var i = 0; i < nd.length; i++) {
-					nd[i].classList.remove('hienra');
-				}
-				noidunghienthi.classList.toggle('hienra');
 			}
 		}
 	</script>
